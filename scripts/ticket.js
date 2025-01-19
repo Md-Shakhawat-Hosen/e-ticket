@@ -51,3 +51,34 @@ function applyBtn(){
 
     
 }
+
+
+function checkValidPhoneNumber(){
+  // JavaScript for validating phone number
+  const phoneForm = document.getElementById("phoneForm");
+  const phoneInput = document.getElementById("phone");
+  const message = document.getElementById("message");
+   const nextButton = document.getElementById("next-btn");
+
+  phoneForm.addEventListener("input", function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    const phoneNumber = phoneInput.value.trim();
+
+    // Regular expression for a valid phone number (example for Bangladeshi format or general formats)
+    const phoneRegex = /^(?:\+88|88)?01[3-9]\d{8}$/;
+
+    if (phoneRegex.test(phoneNumber)) {
+      message.textContent = "Valid phone number!";
+      message.style.color = "green";
+      nextButton.disabled = false;
+      nextButton.classList.remove('opacity-35')
+    } else {
+      message.textContent =
+        "Invalid phone number. Please enter a valid phone number.";
+      message.style.color = "red";
+      nextButton.disabled = true;
+      nextButton.classList.add("opacity-35");
+    }
+  });
+}

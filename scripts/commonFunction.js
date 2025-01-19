@@ -62,6 +62,7 @@ function takeSeat(event){
          
         setSeatColor(clickedSeat);
         setPriceList(clickedSeat,count,total_ticket_price);
+        checkValidPhoneNumber()
         
      }
 }

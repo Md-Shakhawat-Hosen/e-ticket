@@ -8,8 +8,9 @@ function setSelectedColor(){
     selectedId.classList.add("text-[#1DD100]");
 }
 
-function setPriceList(seat,count){
-    const price_id = document.getElementById("price-id");
+function setPriceList(seat,count,ticket_price){
+    const price_id = getElement("price-id");
+    const total_price = getElement("total-price");
     const div = document.createElement('div');
     div.classList.add('flex','justify-between','mt-4');
      div.innerHTML = `
@@ -23,10 +24,12 @@ function setPriceList(seat,count){
 
      const dynamic_seat = document.getElementById("dynamic-seat");
      dynamic_seat.innerText = count;
+     total_price.innerText = ticket_price;
 
 }
 
 let count = 0;
+let total_ticket_price = 0;
 function takeSeat(event){
     count += 1;
     //  console.log(event.target.innerText)
@@ -44,8 +47,10 @@ function takeSeat(event){
         console.log("you cant't purchase above 4 seat")
      }
      else{
+         total_ticket_price += 550;
         setSeatColor(clickedSeat);
-        setPriceList(clickedSeat,count);
+        setPriceList(clickedSeat,count,total_ticket_price);
+        enableApplyButton(total_ticket_price)
      }
 }
 
@@ -54,5 +59,5 @@ function setSeatColor(clickedSeat){
         element.classList.remove("bg-[#F7F8F8]");
         element.classList.add("bg-[#1DD100]", "text-white");
 
-        console.log(element.innerText);
+        // console.log(element.innerText);
 }

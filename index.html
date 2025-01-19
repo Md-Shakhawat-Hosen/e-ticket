@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
      <script src="https://cdn.tailwindcss.com"></script>
-     <script src="./scripts/ticket.js"></script>
     <title>e ticket</title>
 </head>
 <body>
@@ -192,7 +191,7 @@
                   </div>
                   <div class="flex">
                     <img class="" src="./images/seat-gray.png" alt="">
-                    <h1 class="font-bold">Selected</h1>
+                    <h1 id="selected" class="font-bold">Selected</h1>
                   </div>
                   </div>
 
@@ -345,12 +344,12 @@
 
                          <div class="bg-[#F7F8F8] p-8 rounded-lg mt-6">
                              <div class="flex justify-between border-b-2 border-dotted pb-4">
-                                <h2 class="font-bold">Seat <span class="bg-[#1DD100] rounded-lg text-white px-1">2</span></h2>
+                                <h2 class="font-bold">Seat <span id="dynamic-seat" class="bg-[#1DD100] rounded-lg text-white px-1">0</span></h2>
                                 <h2 class="font-bold">Class</h2>
                                 <h2 class="font-bold">Price</h2>
                              </div>
-                              <div class="price-table">
-                                <div class="flex justify-between mt-4">
+                              <div id="price-id" class="price-table">
+                                <!-- <div class="flex justify-between mt-4">
                                 <span>C2</span>
                                 <h1>Economy</h1>
                                 <span>550</span>
@@ -359,7 +358,7 @@
                                 <span>D2</span>
                                 <h1>Economy</h1>
                                 <span>550</span>
-                             </div>
+                             </div> -->
                               </div>
                               <hr class="my-4">
 
@@ -394,5 +393,8 @@
     <footer>
 
     </footer>
+    <script src="./scripts/commonFunction.js"></script>
+
+    <script src="./scripts/ticket.js"></script>
 </body>
 </html>

@@ -72,7 +72,8 @@ function checkValidPhoneNumber(){
       message.textContent = "Valid phone number!";
       message.style.color = "green";
       nextButton.disabled = false;
-      nextButton.classList.remove('opacity-35')
+      nextButton.classList.remove("opacity-35");
+      message.textContent = ""; // Clear error message
     } else {
       message.textContent =
         "Invalid phone number. Please enter a valid phone number.";

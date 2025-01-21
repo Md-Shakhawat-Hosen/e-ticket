@@ -60,7 +60,7 @@ function checkValidPhoneNumber(){
   const message = document.getElementById("message");
    const nextButton = document.getElementById("next-btn");
 
-  phoneForm.addEventListener("keyup", function (event) {
+  phoneForm.addEventListener("input", function (event) {
     event.preventDefault(); // Prevent form submission
 
     // console.log(event.target.value);

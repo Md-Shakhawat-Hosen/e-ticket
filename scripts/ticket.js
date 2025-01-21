@@ -60,10 +60,13 @@ function checkValidPhoneNumber(){
   const message = document.getElementById("message");
    const nextButton = document.getElementById("next-btn");
 
-  phoneForm.addEventListener("input", function (event) {
+  phoneForm.addEventListener("keyup", function (event) {
     event.preventDefault(); // Prevent form submission
 
+    // console.log(event.target.value);
+
     const phoneNumber = phoneInput.value.trim();
+    
 
     // Regular expression for a valid phone number (example for Bangladeshi format or general formats)
     const phoneRegex = /^(?:\+88|88)?01[3-9]\d{8}$/;

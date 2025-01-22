@@ -1,5 +1,10 @@
 
+function setLeftSeat(count){
+    const left_seat_id = getElement('left-seat');
+    const left_seat_value = parseInt(left_seat_id.innerText);
 
+    left_seat_id.innerText = left_seat_value - count;
+}
 function getElement(idField){
     const elementId = document.getElementById(idField);
 
@@ -63,6 +68,7 @@ function takeSeat(event){
         setSeatColor(clickedSeat);
         setPriceList(clickedSeat,count,total_ticket_price);
         checkValidPhoneNumber()
+        setLeftSeat(count);
         
      }
 }
